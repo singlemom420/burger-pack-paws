@@ -1,4 +1,4 @@
-// File: /home/justi/workspace/burger-pack-paws-js-v22-scroll-always/app/layout.js
+// File: /home/justi/workspace/burger-pack-paws/app/layout.js
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

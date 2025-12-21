@@ -258,7 +258,7 @@ export default function Page() {
 
       // Then scroll to partner section after it renders
       requestAnimationFrame(() => {
-        requestAnimationFrame(() => scrollToIdSmooth("partnerSection"));
+        requestAnimationFrame(() => scrollToIdSmooth("tabs"));
       });
 
       return;
@@ -310,7 +310,6 @@ export default function Page() {
                   />
                   <path fill="currentColor" d="M17.5 6.2a1.1 1.1 0 1 1 0 2.2a1.1 1.1 0 0 1 0-2.2z" />
                 </svg>
-                <span>Instagram</span>
               </span>
             </a>
           </div>
