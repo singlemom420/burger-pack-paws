@@ -231,19 +231,18 @@ export default function Page() {
     }
   }, []);
 
-  // Update hash when user changes tabs (NO SCROLL here)
+  // Update hash when user changes tabs
   useEffect(() => {
     if (typeof window === "undefined") return;
     if (!userInteractedRef.current) return;
-
     window.history.replaceState(null, "", `#tab-${activeTab}`);
   }, [activeTab]);
 
-  // Hero CTA: scroll only from hero buttons
+  // Hero CTA: scroll behavior lives here
   const onHeroGo = (tabId) => {
     userInteractedRef.current = true;
 
-    // Always scroll to tabs from hero CTA
+    // Scroll to tabs area first
     scrollToIdSmooth("tabs");
 
     if (tabId === "program") {
@@ -256,7 +255,7 @@ export default function Page() {
       window.history.replaceState(null, "", "#tab-partner");
       setActiveTab("partner");
 
-      // Then scroll to partner section after it renders
+      // After render, scroll to the partner section top
       requestAnimationFrame(() => {
         requestAnimationFrame(() => scrollToIdSmooth("tabs"));
       });
@@ -267,11 +266,19 @@ export default function Page() {
     setActiveTab(tabId);
   };
 
-  // Tab clicks: NO SCROLL, just set active tab
-  const onTabChange = (tabId) => {
-    userInteractedRef.current = true;
-    setActiveTab(tabId);
-  };
+  // Tab clicks: scroll to the TOP of the tab content so you don't land mid-panel
+const onTabChange = (tabId) => {
+  userInteractedRef.current = true;
+  setActiveTab(tabId);
+
+  requestAnimationFrame(() => {
+    const tabsEl = document.getElementById("tabs");
+    if (tabsEl) {
+      tabsEl.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  });
+};
+
 
   return (
     <>
@@ -297,6 +304,8 @@ export default function Page() {
               href="https://instagram.com/burgerpackpawsproject"
               target="_blank"
               rel="noreferrer"
+              aria-label="Instagram"
+              title="Instagram"
             >
               <span style={{ display: "inline-flex", alignItems: "center", gap: 10 }}>
                 <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" style={{ display: "block" }}>
