@@ -287,7 +287,7 @@ const onTabChange = (tabId) => {
       <header className="nav">
         <div className="container navInner">
           <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-            <Image src="/paw.png" alt="Burger Pack Paws Project" width={42} height={42} priority />
+            <Image src="/paw-print.avif" alt="Burger Pack Paws Project" width={42} height={42} priority />
             <div style={{ display: "flex", flexDirection: "column" }}>
               <span style={{ fontWeight: 900, letterSpacing: "-0.01em", fontSize: 16 }}>
                 Burger Pack Paws Project
