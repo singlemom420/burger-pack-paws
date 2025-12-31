@@ -17,11 +17,14 @@ function Program() {
           <div className="kicker">How our quarterly partnership works</div>
           <h2 className="h2">One featured rescue every quarter (3 months)</h2>
           <p className="p">
-            Each quarter, we select one Arizona rescue to be our featured partner. During those three months, we focus on
-            helping you in practical, hands on ways, and making the quarter financially beneficial for your organization.
+            Each quarter, we select one Arizona rescue to be our featured partner. During those three months, we
+            focus on helping you in practical, hands on ways, and making the quarter financially beneficial for your
+            organization.
           </p>
           <ul className="list">
-            <li>Hosting a fundraising pop up event specifically for your rescue (local business, park, brewery, etc.)</li>
+            <li>
+              Hosting a fundraising pop up event specifically for your rescue (local business, park, brewery, etc.)
+            </li>
             <li>Running donation drives for supplies your organization needs</li>
             <li>Promoting your adoptable dogs on our social media</li>
             <li>Helping raise awareness for your mission</li>
@@ -34,14 +37,16 @@ function Program() {
           <div className="kicker">The goal</div>
           <h2 className="h2">Fun, community driven, and built to help</h2>
           <p className="p">
-            These quarterly pop ups are designed to be fun, community driven, and financially beneficial to the rescue, with
-            funds raised going directly to your organization.
+            These quarterly pop ups are designed to be fun, community driven, and financially beneficial to the
+            rescue, with funds raised going directly to your organization.
           </p>
 
           <div style={{ display: "grid", gap: 12 }}>
             <div className="panel" style={{ padding: 14 }}>
               {/* if you want this fully b/w, change this color to a gray later */}
-              <div className="kicker" style={{ color: "rgba(0,0,0,.9)" }}>What you can expect</div>
+              <div className="kicker" style={{ color: "rgba(0,0,0,.9)" }}>
+                What you can expect
+              </div>
               <ul className="list">
                 <li>Clear planning and communication</li>
                 <li>Respect for your policies, rules, and safety processes</li>
@@ -52,8 +57,8 @@ function Program() {
             <div className="panel" style={{ padding: 14 }}>
               <div className="kicker">Why we are doing this</div>
               <p className="p" style={{ margin: 0 }}>
-                We do not want to show up once and disappear. We want to create meaningful, ongoing support for each rescue we
-                partner with, lighten the load, and help more dogs get adopted.
+                We do not want to show up once and disappear. We want to create meaningful, ongoing support for
+                each rescue we partner with, lighten the load, and help more dogs get adopted.
               </p>
             </div>
           </div>
@@ -72,13 +77,16 @@ function Volunteer() {
           <div className="kicker">Monthly volunteer support</div>
           <h2 className="h2">Hands on help during your partnership quarter</h2>
           <p className="p">
-            Outside of the fundraising event, we also want to be involved hands on. Our goal is to come help your rescue at
-            least once a month, offering support wherever it is needed most.
+            Outside of the fundraising event, we also want to be involved hands on. Our goal is to come help your
+            rescue at least once a month, offering support wherever it is needed most.
           </p>
 
           <div className="h3">Some ways we would love to volunteer</div>
           <ul className="list">
-            <li>Taking adoptable dogs out for adventure days, hikes, and public outings while they wear “Adopt Me” vests</li>
+            <li>
+              Taking adoptable dogs out for adventure days, hikes, and public outings while they wear “Adopt Me”
+              vests
+            </li>
             <li>Helping with kennel cleaning</li>
             <li>Assisting with transporting dogs or supplies</li>
             <li>Volunteering at your adoption events</li>
@@ -92,13 +100,15 @@ function Volunteer() {
           <div className="kicker">Your policies come first</div>
           <h2 className="h2">We will follow your process</h2>
           <p className="p">
-            We completely respect your policies and will follow any rules, guidelines, or processes you have in place to ensure
-            your dogs are safe and your team is supported.
+            We completely respect your policies and will follow any rules, guidelines, or processes you have in
+            place to ensure your dogs are safe and your team is supported.
           </p>
 
           <div className="panel" style={{ padding: 14 }}>
             {/* neutral color */}
-            <div className="kicker" style={{ color: "rgba(0,0,0,.9)" }}>We can adapt</div>
+            <div className="kicker" style={{ color: "rgba(0,0,0,.9)" }}>
+              We can adapt
+            </div>
             <ul className="list">
               <li>Schedule visits around your busiest days</li>
               <li>Stay within approved areas and procedures</li>
@@ -120,8 +130,8 @@ function Photography() {
           <div className="kicker">Photography support</div>
           <h2 className="h2">Included in all partnerships</h2>
           <p className="p">
-            We understand how much a great photo can change a dog’s chances of getting adopted, and we want to contribute that
-            skill every month.
+            We understand how much a great photo can change a dog’s chances of getting adopted, and we want to
+            contribute that skill every month.
           </p>
 
           <div className="h3">Photography help we can provide</div>
@@ -137,7 +147,9 @@ function Photography() {
         <div className="panel">
           <div className="accentBar" />
           <div className="kicker">A little peek</div>
-          <h3 className="h3" style={{ marginTop: 6 }}>A collage from our photography section</h3>
+          <h3 className="h3" style={{ marginTop: 6 }}>
+            A collage from our photography section
+          </h3>
 
           <div className="photoCollage" style={{ marginTop: 14 }}>
             <img src="/dog1.jpg" alt="Rescue dog portrait" />
@@ -162,13 +174,15 @@ function Partner() {
           <div className="kicker">Partner inquiry</div>
           <h2 className="h2">Partner With Us</h2>
           <p className="p">
-            If you are open to collaborating, fill this out and we will reach back out. Our goal is to make your jobs easier,
-            lighten the load, and help get more dogs adopted.
+            If you are open to collaborating, fill this out and we will reach back out. Our goal is to make your
+            jobs easier, lighten the load, and help get more dogs adopted.
           </p>
 
           <div className="panel" style={{ padding: 14 }}>
             {/* neutral color */}
-            <div className="kicker" style={{ color: "rgba(0,0,0,.9)" }}>Quick note</div>
+            <div className="kicker" style={{ color: "rgba(0,0,0,.9)" }}>
+              Quick note
+            </div>
             <p className="p" style={{ margin: 0 }}>
               Submissions go straight into Supabase so you can track inquiries in one place.
             </p>
@@ -289,7 +303,13 @@ export default function Page() {
       <header className="nav">
         <div className="container navInner">
           <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-            <Image src="/paw-print.avif" alt="Burger Pack Paws Project" width={42} height={42} priority />
+            <Image
+              src="/paw-print.avif"
+              alt="Burger Pack Paws Project"
+              width={42}
+              height={42}
+              priority
+            />
             <div style={{ display: "flex", flexDirection: "column" }}>
               <span style={{ fontWeight: 900, letterSpacing: "-0.01em", fontSize: 16 }}>
                 Burger Pack Paws Project
@@ -332,16 +352,36 @@ export default function Page() {
         <section className="hero">
           <div className="container heroGrid">
             <div>
-              <div className="badge animate delay-1">Arizona • Rescue Support • Community</div>
+              <div className="badge animate delay-1">
+                Arizona • Rescue Support • Community
+              </div>
 
               <h1 className="h1 animate delay-2">
                 Consistent, meaningful support for Arizona rescues, one quarter at a time.
               </h1>
 
+              {/* NEW FAMILY PHOTO BEFORE INTRO */}
+              <div className="animate delay-3" style={{ marginBottom: "1.2rem" }}>
+                <Image
+                  src="/Rikki-Dilli.jpg"
+                  alt="Rikki, Dillion, and their rescue dogs in Arizona"
+                  width={1600}
+                  height={900}
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    borderRadius: 18,
+                    boxShadow: "0 18px 40px rgba(0,0,0,.20)",
+                    display: "block",
+                  }}
+                  priority
+                />
+              </div>
+
               <p className="p animate delay-3">
-                Hi there! We are Rikki and Dillion. After rescuing eight dogs ourselves over the years, we wanted to take our
-                passion for helping animals and turn it into something bigger, something that supports rescues consistently and
-                meaningfully.
+                Hi there! We are Rikki and Dillion. After rescuing eight dogs ourselves over the years, we wanted to
+                take our passion for helping animals and turn it into something bigger, something that supports rescues
+                consistently and meaningfully.
               </p>
 
               <div className="ctaRow animate delay-4">
@@ -377,7 +417,14 @@ export default function Page() {
 
       <footer className="footer">
         <div className="container">
-          <div style={{ display: "flex", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              gap: 12,
+              flexWrap: "wrap",
+            }}
+          >
             <span>© {new Date().getFullYear()} Burger Pack Paws Project</span>
             <span>Based in Arizona • Supporting rescue dogs</span>
           </div>
