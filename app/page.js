@@ -40,7 +40,8 @@ function Program() {
 
           <div style={{ display: "grid", gap: 12 }}>
             <div className="panel" style={{ padding: 14 }}>
-              <div className="kicker" style={{ color: "rgba(90,46,166,.92)" }}>What you can expect</div>
+              {/* if you want this fully b/w, change this color to a gray later */}
+              <div className="kicker" style={{ color: "rgba(0,0,0,.9)" }}>What you can expect</div>
               <ul className="list">
                 <li>Clear planning and communication</li>
                 <li>Respect for your policies, rules, and safety processes</li>
@@ -96,7 +97,8 @@ function Volunteer() {
           </p>
 
           <div className="panel" style={{ padding: 14 }}>
-            <div className="kicker" style={{ color: "rgba(90,46,166,.92)" }}>We can adapt</div>
+            {/* neutral color */}
+            <div className="kicker" style={{ color: "rgba(0,0,0,.9)" }}>We can adapt</div>
             <ul className="list">
               <li>Schedule visits around your busiest days</li>
               <li>Stay within approved areas and procedures</li>
@@ -165,7 +167,8 @@ function Partner() {
           </p>
 
           <div className="panel" style={{ padding: 14 }}>
-            <div className="kicker" style={{ color: "rgba(90,46,166,.92)" }}>Quick note</div>
+            {/* neutral color */}
+            <div className="kicker" style={{ color: "rgba(0,0,0,.9)" }}>Quick note</div>
             <p className="p" style={{ margin: 0 }}>
               Submissions go straight into Supabase so you can track inquiries in one place.
             </p>
@@ -267,18 +270,17 @@ export default function Page() {
   };
 
   // Tab clicks: scroll to the TOP of the tab content so you don't land mid-panel
-const onTabChange = (tabId) => {
-  userInteractedRef.current = true;
-  setActiveTab(tabId);
+  const onTabChange = (tabId) => {
+    userInteractedRef.current = true;
+    setActiveTab(tabId);
 
-  requestAnimationFrame(() => {
-    const tabsEl = document.getElementById("tabs");
-    if (tabsEl) {
-      tabsEl.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  });
-};
-
+    requestAnimationFrame(() => {
+      const tabsEl = document.getElementById("tabs");
+      if (tabsEl) {
+        tabsEl.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  };
 
   return (
     <>
@@ -325,6 +327,7 @@ const onTabChange = (tabId) => {
         </div>
       </header>
 
+      {/* Let main be as tall as it needs; no maxHeight */}
       <main>
         <section className="hero">
           <div className="container heroGrid">
@@ -371,6 +374,15 @@ const onTabChange = (tabId) => {
           <Tabs tabs={tabs} activeId={activeTab} onChange={onTabChange} />
         </section>
       </main>
+
+      <footer className="footer">
+        <div className="container">
+          <div style={{ display: "flex", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
+            <span>© {new Date().getFullYear()} Burger Pack Paws Project</span>
+            <span>Based in Arizona • Supporting rescue dogs</span>
+          </div>
+        </div>
+      </footer>
     </>
   );
 }

@@ -1,55 +1,13 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Tabs({ tabs, activeId, onChange }) {
   const safeTabs = tabs || [];
   const activeTab = safeTabs.find((t) => t.id === activeId) || safeTabs[0];
 
-  const measureWrapRef = useRef(null);
-  const [maxHeight, setMaxHeight] = useState(0);
-
   const tabsBarRef = useRef(null);
   const tabBtnRefs = useRef({});
-
-  const recomputeMaxHeight = () => {
-    const wrap = measureWrapRef.current;
-    if (!wrap) return;
-
-    const nodes = wrap.querySelectorAll("[data-measure-tab]");
-    let tallest = 0;
-
-    nodes.forEach((node) => {
-      const h = node.getBoundingClientRect().height;
-      if (h > tallest) tallest = h;
-    });
-
-    if (tallest > 0) setMaxHeight(Math.ceil(tallest));
-  };
-
-  useLayoutEffect(() => {
-    recomputeMaxHeight();
-  }, []);
-
-  useLayoutEffect(() => {
-    recomputeMaxHeight();
-  }, [activeId]);
-
-  useEffect(() => {
-    const onResize = () => recomputeMaxHeight();
-    window.addEventListener("resize", onResize);
-
-    let ro;
-    if (typeof ResizeObserver !== "undefined" && measureWrapRef.current) {
-      ro = new ResizeObserver(() => recomputeMaxHeight());
-      ro.observe(measureWrapRef.current);
-    }
-
-    return () => {
-      window.removeEventListener("resize", onResize);
-      if (ro) ro.disconnect();
-    };
-  }, []);
 
   // Keep the ACTIVE TAB visible horizontally (no vertical scrolling)
   useEffect(() => {
@@ -66,8 +24,10 @@ export default function Tabs({ tabs, activeId, onChange }) {
     const visibleLeft = bar.scrollLeft;
     const visibleRight = visibleLeft + bar.clientWidth;
 
+    // if already fully visible, do nothing
     if (btnLeft >= visibleLeft && btnRight <= visibleRight) return;
 
+    // center active tab in the scroll area
     const target = btnLeft - bar.clientWidth / 2 + btnRect.width / 2;
 
     bar.scrollTo({
@@ -81,6 +41,7 @@ export default function Tabs({ tabs, activeId, onChange }) {
     const bar = tabsBarRef.current;
     if (!bar) return;
 
+    // only on mobile
     if (window.matchMedia("(min-width: 901px)").matches) return;
 
     const key = "tabsScrollHintShown_v1";
@@ -147,22 +108,9 @@ export default function Tabs({ tabs, activeId, onChange }) {
         })}
       </div>
 
-      {/* IMPORTANT: This id lets Page.js scroll you to the TOP of the tab content */}
-      <div
-        id="tabPanelTop"
-        className="tabPanelHeightLock"
-        style={{ minHeight: maxHeight ? `${maxHeight}px` : undefined }}
-      >
+      {/* Active tab content – no minHeight, just natural height */}
+      <div id="tabPanelTop" className="tabPanel">
         <div className="tabPanelInner">{activeTab?.content}</div>
-      </div>
-
-      {/* Offscreen measurement */}
-      <div ref={measureWrapRef} className="tabMeasure" aria-hidden="true">
-        {safeTabs.map((t) => (
-          <div key={t.id} data-measure-tab className="tabMeasureItem">
-            {t.content}
-          </div>
-        ))}
       </div>
     </div>
   );
